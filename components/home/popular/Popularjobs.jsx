@@ -30,16 +30,17 @@ const Popularjobs = () => {
           <Text style={styles.headerBtn}>Something went wrong</Text>
         ): (
           <FlatList 
-            data={[1, 2, 3]}
+            data={data}
             renderItem={({item}) => (
               <PopularJobCard 
                 item={item}
               />
             )}
 
-            keyExtractor={item => item}
+            keyExtractor={item => item?.job_id}
             contentContainerStyle={{columnGap: SIZES.medium}}
             horizontal
+            showsHorizontalScrollIndicator={false}
           />
         )}
       </View>
